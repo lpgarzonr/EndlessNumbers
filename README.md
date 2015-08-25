@@ -1,1 +1,3 @@
-# EndlessNumbers
+# Endless Sequence Numbers
+
+## Regarding to the complexity
