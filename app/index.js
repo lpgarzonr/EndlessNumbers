@@ -1,7 +1,12 @@
+/**
+ * Compute the cycle length of a given number througth a tail recursive function.
+ * @param {number} n - The Papers title.
+ * @param {number} The cycle lenth of a given mumber.
+ */
 function getCycleLengthRec(n){
-  function recursiveCycleLenngth(n, count){
+  function recursiveCycleLenngth(n, cicleLength){
     if (n == 1){
-      return count;
+      return cicleLength;
     }
     else {
       if (n % 2 == 0){
@@ -9,23 +14,34 @@ function getCycleLengthRec(n){
       } else {
         n = 3 * n + 1;
       } 
-      return recursiveCycleLenngth(n, count+1);   
+      return recursiveCycleLenngth(n, cicleLength+1);   
     }
   };
   return recursiveCycleLenngth(n, 1);
 };
 
+/**
+ * Compute the cycle length of a given number.
+ * @param {number} n - The Papers title.
+ * @param {number} The cycle lenth of a given mumber.
+ */
 function getCycleLength(n){
-  var count = 1;
+  var cicleLength = 1;
   while(n != 1){
     if (n % 2 == 0){
       n = n/2;
     } else {
       n = 3 * n + 1;
-    } count++;
-  } return count;
+    } cicleLength++;
+  } return cicleLength;
 };
 
+/**
+ * Determine the max cycle length of the numbers between a given interval.
+ * @param {number} i - Lower range of the interval.
+ * @param {number} j - Uper range of the interval.
+ * @return {number} Maximun cycle length found.
+ */
 function derermineMaxCyclesLength(i, j) { 
   try{
    validateInputs(i,j);
@@ -41,6 +57,11 @@ function derermineMaxCyclesLength(i, j) {
   }return maxCycleLen;
 };
 
+/**
+ * Validate that the inputs are in line with business rules.
+ * @param {number} i - Lower range of the interval.
+ * @param {number} j - Uper range of the interval.
+ */
 function validateInputs(i, j){
   if(isNaN(i) || isNaN(j)){ throw "The inputs should be numbers"};
   if(i > j) { throw "The first number should be lower than the second number"};
