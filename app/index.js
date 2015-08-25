@@ -1,5 +1,7 @@
 /**
  * Compute the cycle length of a given number througth a tail recursive function.
+ * :( After reading about tail javascript, i am not sure if it is a good practice in java script, 
+ * it seems that TailRecursion is not supported at javascript
  * @param {number} n - The Papers title.
  * @param {number} The cycle lenth of a given mumber.
  */
@@ -65,6 +67,6 @@ function derermineMaxCyclesLength(i, j) {
 function validateInputs(i, j){
   if(isNaN(i) || isNaN(j)){ throw "The inputs should be numbers"};
   if(i > j) { throw "The first number should be lower than the second number"};
-  if(i < 0 || j < 0) { throw "The numbers must be greater than zero"};
+  if(i <= 0 || j <= 0) { throw "The numbers must be greater than zero"};
   if(j >= 1000000) { throw "The upper interval must be less than 1.000.000"};
 }
